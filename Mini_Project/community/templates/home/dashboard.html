@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<meta charset="utf-8">
+<title>Feed</title>
+{% endblock %}
+
+{% block body %}
+<br>
+  <div class="container">
+
+
+      {% for question in questions %}
+<div class="jumbotron" style="background-color:#edf2f2">
+        <h2><a href ="{{ question.get_absolute_url }}">{{ question.title }}</a></h2>
+        <p>Written by {{ question.author }} on {{ question.published }}</p>
+        <hr>
+        {{ question.content|truncatewords:40|linebreaks }}
+
+        </div>
+      {% endfor %}
+      {% include 'paginator.html' with page=questions %}
+
+      </div>
+{% endblock %}

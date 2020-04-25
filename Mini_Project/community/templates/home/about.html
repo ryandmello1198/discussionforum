@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+  {% block head %}
+    <title>About</title>
+  {% endblock %}
+
+  {% block body %}
+  <style media="screen">
+    img{
+      border-radius: 50%
+    }
+  </style>
+  <div class="container">
+  <div class="jumbotron">
+      <h1><strong>This site is made by Aishwarya and Ryan. It would not have been possible without our dedication, rigorous efforts and our guide who kept on motivating us to do better and achieve our fullest potential</strong> </h1>
+      <br>
+      <p>
+        <strong>Contact:</strong>
+      </p>
+      <div class="row">
+          <div class="col-sm-3">
+            <p>
+              <strong>Aishwarya Sebin</strong>
+            </p>
+            <p>
+              <strong>Email:</strong> aishsebin@gmail.com
+            </p>
+            <p>
+              <strong>Phone:</strong> <i>9833760985</i>
+            </p>
+          </div>
+          <div class="col-sm-3">
+            <p>
+                {% load staticfiles %}
+              <img src="{% static 'community/aish.jpg' %}" style="width: 100px;height:100px;"class="img-responsive img-rounded">
+            </p>
+          </div>
+          <div class="col-sm-3">
+            <p>
+              <strong>Ryan D'Mello</strong>
+            </p>
+            <p>
+              <strong>Email:</strong> dmelloryan11@gmail.com
+            </p>
+            <p>
+              <strong>Phone:</strong> <i>7507858717</i>
+            </p>
+          </div>
+          <div class="col-sm-3">
+            <p>
+                {% load staticfiles %}
+              <img src="{% static 'community/ryan.jpg' %}" style="width: 100px;height:100px;"class="img-responsive img-rounded">
+            </p>
+          </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

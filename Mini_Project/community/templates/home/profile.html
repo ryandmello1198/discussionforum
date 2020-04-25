@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+    {% block head %}
+
+    <meta charset="utf-8">
+    <title>Profile</title>
+    {% endblock %}
+
+
+    {% block body %}
+    <div class="container">
+    <div class="jumbotron">
+      <h1>Profile</h1>
+      <p>Username: {{ user }}</p>
+      <p>First name: {{ user.first_name }}</p>
+      <p>Last name: {{ user.last_name }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Description: {{ user.userprofile.description }} </p>
+      <p>Occupation:  {{ user.userprofile.occupation }}</p>
+      <p>Number of Questions Asked: {{ user.questions.count }}</p>
+      
+      <img src="{{ user.userprofile.image.url }}" width="240">
+      <br>
+      <br>
+      <a class="btn btn-outline-success" href="edit/" role="button">Edit Profile</a>
+    </div>
+    </div>
+    {% endblock %}

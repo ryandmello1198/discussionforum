@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% block head %}
+    <meta charset="utf-8">
+
+    <title></title>
+    {% endblock %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    <style media="screen">
+      body{
+        background-color: #a1abba
+      }
+      img{
+        border-radius: 50%
+      }
+    </style>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-fixed-top", method="post">
+      <!-- left -->
+      <div class="container">
+      <div class="mx-auto order-0">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            {% load staticfiles %}
+            <img style="width:35px;height:35px;" src="{% static 'community/icon.png' %}" alt="">
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+      </ul>
+      </div>
+      <!-- centre -->
+      {% if user.is_authenticated %}
+      <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+
+      <ul class="navbar-nav w-100 justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link" href="/account">Feed</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href= "#" >Notifications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/account/profile">Profile</a>
+        </li>
+      </ul>
+    </div>
+    <!-- right -->
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="btn btn-outline-success" href="/account/ask" role="button">Ask a Question</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-outline-danger" href="/account/logout" role="button">Logout</a>
+
+        </li>
+      </ul>
+    </div>
+    {% else %}
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="btn btn-outline-success" href="/account/login" role="button">Log in</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-outline-success" href="/account/register" role="button">Register</a>
+        </li>
+      </ul>
+    </div>
+    {% endif %}
+    </div>
+    </nav>
+    {% block body %}
+    {% endblock %}
+  </body>
+</html>

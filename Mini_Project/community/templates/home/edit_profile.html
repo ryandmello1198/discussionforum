@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+    {% block head %}
+
+    <meta charset="utf-8">
+    <title>Edit Profile</title>
+    {% endblock %}
+
+
+    {% block body %}
+    <div class="container">
+      <div class="jumbotron">
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+
+      </div>
+    </div>
+    {% endblock %}
